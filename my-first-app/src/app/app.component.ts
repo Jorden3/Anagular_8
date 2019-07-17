@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  username = '';
+  emptyName = false;
+
+  onEmpty() {
+    this.username = '';
+  }
+
+  checkLength() {
+    this.emptyName = this.username.length > 0 ? true : false;
+  }
+
 }
