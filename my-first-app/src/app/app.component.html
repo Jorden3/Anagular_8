@@ -5,9 +5,9 @@
             <hr>
             <app-servers></app-servers>
             <hr>
-            <input type="text" [(ngModel)]="username " (input)="checkLength()">
+            <input type="text" class="form-control" [(ngModel)]="username">
             <p>{{username}}</p>
-            <button class="btn btn-primary" [disabled]="!emptyName" (click)="onEmpty()">Empty the name</button>
+            <button class="btn btn-primary" [disabled]="!(username.length)" (click)="username = ''">Empty the name</button>
             <hr>
             <app-warning-alert></app-warning-alert>
             <app-success-alert></app-success-alert>
