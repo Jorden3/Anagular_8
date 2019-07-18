@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+
+  onGamePlaying($event) {
+    console.log($event);
+    if ($event % 2 === 0) {
+      this.evenNumbers.push($event);
+    } else {
+      this.oddNumbers.push($event);
+    }
+
+  }
 }
