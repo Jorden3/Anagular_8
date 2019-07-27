@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.userService.activatedEmmiter.subscribe(didActivate =>{
+    this.userService.activatedEmmiter.subscribe(didActivate => {
       this.userActivated = didActivate;
-    })
+    });
   }
 }
