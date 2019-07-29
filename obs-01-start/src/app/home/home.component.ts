@@ -21,11 +21,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       let count = 0;
       setInterval(() => {
         observer.next(count);
-        if(count === 5){
+        if (count === 5) {
           observer.complete();
         }
-        if(count > 3) {
-          observer.error(new Error ('Count is greater than 3!'));
+        if (count > 3) {
+          observer.error(new Error('Count is greater than 3!'));
         }
         count++;
       }, 1000);
@@ -33,19 +33,19 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
 
-    this.firsObsSubscription =     customInstervaObservable
-    .pipe(filter(data => {
-      return data > 0;
-    }),map((data: number) =>{
-      return 'Round: ' + (data);
-    }))
-    .subscribe(data => {
-      console.log(data);
-    }, err =>{
+    this.firsObsSubscription = customInstervaObservable
+      .pipe(filter(data => {
+        return data > 0;
+      }), map((data: number) => {
+        return `Round: ${data}`;
+      }))
+      .subscribe(data => {
+        console.log(data);
+      }, err => {
         alert(err.message);
-    }, () =>{
-      console.log('Completed');
-    });
+      }, () => {
+        console.log('Completed');
+      });
   }
 
   ngOnDestroy() {
